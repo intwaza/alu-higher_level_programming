@@ -63,7 +63,6 @@ class Rectangle:
             for _ in range(self.__height)
         )
 
-
     def __repr__(self):
         """Return official string representation to recreate new instance."""
         return f"{self.__class__.__name__}({self.__width}, {self.__height})"
