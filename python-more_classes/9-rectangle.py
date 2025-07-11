@@ -5,7 +5,7 @@ Defines a Rectangle class with square creation capability.
 
 
 class Rectangle:
-    """Represents a rectangle with customizable print symbol and comparison features."""
+    """Represents a rectangle with customizable print symbol"""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -49,16 +49,19 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle. Returns 0 if width or height is 0."""
+        """Return the perimeter of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
-
+    
     def __str__(self):
-        """Return a string representation using print_symbol."""
+        """Return string representation using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(str(self.print_symbol) * self.__width for _ in range(self.__height))
+        return "\n".join(
+            str(self.print_symbol) * self.__width
+            for _ in range(self.__height)
+        )
 
     def __repr__(self):
         """Return a string to recreate the rectangle using eval()."""
