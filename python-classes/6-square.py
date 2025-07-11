@@ -3,6 +3,7 @@
 Defines a Square class with size, position, area, and formatted printing.
 """
 
+
 class Square:
     """Represents a square with size, position, and print capabilities."""
 
