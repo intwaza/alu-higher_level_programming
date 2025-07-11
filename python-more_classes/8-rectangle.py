@@ -5,8 +5,8 @@ Defines a Rectangle class with comparison capability based on area.
 
 
 class Rectangle:
-    """Represents a rectangle with width, height, area, and comparison functionality."""
-    
+    """Represents a rectangle with width, height, area."""
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -49,7 +49,7 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return perimeter of the rectangle. Return 0 if width or height is 0."""
+        """Return perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
@@ -58,7 +58,11 @@ class Rectangle:
         """Return string representation using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(str(self.print_symbol) * self.__width for _ in range(self.__height))
+        return "\n".join(
+            str(self.print_symbol) * self.__width
+            for _ in range(self.__height)
+        )
+
 
     def __repr__(self):
         """Return official string representation to recreate new instance."""
