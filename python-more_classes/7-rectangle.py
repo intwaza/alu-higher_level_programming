@@ -74,8 +74,7 @@ class Rectangle:
         return (f"{self.__class__.__name__}"
                 f"({self.__width}, {self.__height})")
 
-
     def __del__(self):
-        """Print message when instance is deleted and decrement instance counter."""
+        """Print message when instance is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
