@@ -5,7 +5,9 @@ Defines a Square class with size validation and area method.
 
 
 class Square:
-    """Represents a square with size validation and a method to compute area."""
+    """
+    Represents a square with size validation and a method to compute area
+    """
 
     def __init__(self, size=0):
         """Initialize the square and validate size."""
