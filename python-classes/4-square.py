@@ -6,7 +6,7 @@ Defines a Square class with getter and setter for size.
 
 class Square:
     """
-    Represents a square with a private size attribute, area method, and property methods.
+    Represents a square with private size, area calculation, and size accessors.
     """
 
     def __init__(self, size=0):
