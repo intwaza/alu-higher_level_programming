@@ -65,4 +65,3 @@ class Rectangle:
         """Return a string that can be used by eval()."""
         return (f"{self.__class__.__name__}"
                 f"({self.__width}, {self.__height})")
-
