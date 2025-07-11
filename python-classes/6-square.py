@@ -16,7 +16,7 @@ class Square:
     def size(self):
         """Get the size of the square."""
         return self.__size
-
+    
     @size.setter
     def size(self, value):
         """Set the size with validation."""
@@ -25,7 +25,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
+        
     @property
     def position(self):
         """Get the position of the square."""
