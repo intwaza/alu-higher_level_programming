@@ -10,6 +10,18 @@ Exception: area() is not implemented
 # Valid integer input
 >>> bg.integer_validator("width", 5)
 
+# Call integer_validator() with no arguments (should raise TypeError)
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Call integer_validator() with only one argument (should raise TypeError)
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
 # Invalid inputs (should raise TypeError)
 >>> bg.integer_validator("age", "30")
 Traceback (most recent call last):
