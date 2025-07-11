@@ -62,5 +62,5 @@ class Rectangle:
         return "\n".join("#" * self.__width for _ in range(self.__height))
 
     def __repr__(self):
-        """Return a string that can be used by eval() to recreate this instance."""
+        """Return a string that can be used by eval()"""
         return f"{self.__class__.__name__}({self.__width}, {self.__height})"
