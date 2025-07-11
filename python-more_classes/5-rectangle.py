@@ -62,9 +62,9 @@ class Rectangle:
         return "\n".join("#" * self.__width for _ in range(self.__height))
 
     def __repr__(self):
-        """Return a string that can be used by eval()"""
+        """Return a string that can be used by eval()."""
         return (f"{self.__class__.__name__}"
-        f"({self.__width}, {self.__height})")
+                f"({self.__width}, {self.__height})")
 
 
     def __del__(self):
