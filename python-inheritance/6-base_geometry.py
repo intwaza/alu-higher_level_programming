@@ -5,6 +5,7 @@ Module 6-base_geometry
 Defines BaseGeometry class with an area method that raises an Exception.
 """
 
+
 class BaseGeometry:
     """BaseGeometry class with an area method not yet implemented."""
 
