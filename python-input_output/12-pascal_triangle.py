@@ -17,13 +17,13 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    
+
     triangle = []
-    
+
     for i in range(n):
         # Create a new row
         row = []
-        
+
         for j in range(i + 1):
             # First and last elements of each row are always 1
             if j == 0 or j == i:
@@ -31,7 +31,7 @@ def pascal_triangle(n):
             else:
                 # Each element is the sum of the two elements above it
                 row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-        
+
         triangle.append(row)
-    
+
     return triangle
