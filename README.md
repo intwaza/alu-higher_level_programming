@@ -1,14 +1,14 @@
-📁 Python Projects Repository
+Python Projects Repository
 Welcome to this repository! It contains a collection of Python projects that showcase different concepts, skills, and problem-solving techniques using Python.
 
-📌 What's Inside
-🐍 Python scripts for learning and practice
+What's Inside
+Python scripts for learning and practice
 
-🧪 Hands-on examples with clear structure
+Hands-on examples with clear structure
 
-🛠️ Real-world use cases and basic automation tasks
+Real-world use cases and basic automation tasks
 
-📚 Topics Covered
+Topics Covered
 Variables and data types
 
 Functions and control flow
@@ -21,7 +21,7 @@ Modules and packages
 
 Shell scripting (in some folders)
 
-🚀 How to Use
+How to Use
 Clone the repository:
 
 bash
@@ -40,7 +40,7 @@ bash
 Copy
 Edit
 python3 script_name.py
-📦 Requirements
+Requirements
 Python 3.x
 
 Bash (for shell script files)
