@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Script that sends a GET request
 
 # Create temporary file to store response body
