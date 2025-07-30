@@ -28,8 +28,8 @@ if __name__ == "__main__":
     # Join City and State tables to get both city and state information
     results = session.query(City, State) \
         .join(State, City.state_id == State.id) \
-            .order_by(City.id) \
-                .all()
+        .order_by(City.id) \
+        .all()
 
     # Display results in the required format
     for city, state in results:
