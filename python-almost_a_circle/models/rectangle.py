@@ -102,7 +102,8 @@ class Rectangle(Base):
         """
         Return string representation of the Rectangle
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
+        f"{self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
             """
@@ -120,6 +121,7 @@ class Rectangle(Base):
                 for key, value in kwargs.items():
                     if hasattr(self, key):
                         setattr(self, key, value)
+
     def to_dictionary(self):
         """
         Return the dictionary representation of the Rectangle
