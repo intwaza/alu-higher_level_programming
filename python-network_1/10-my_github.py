@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script that takes GitHub credentials (username and password) and uses 
 the GitHub API to display your id using Basic Authentication.

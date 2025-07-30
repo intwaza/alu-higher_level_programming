@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script that fetches https://alu-intranet.hbtn.io/status
 and displays the body response information.
