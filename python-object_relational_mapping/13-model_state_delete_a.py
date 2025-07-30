@@ -14,10 +14,12 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    Base.metadata.create_all(engine)
-    states = session.query(State).filter(State.name.contains('a')).all()
-
-    for state in states:
+    
+    # Query and delete method
+    states_to_delete = (session.query(State)
+                   .filter(State.name.contains('a'))
+                   .all())
+    for state in states_to_delete:
         session.delete(state)
     session.commit()
     session.close()
