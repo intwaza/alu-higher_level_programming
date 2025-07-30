@@ -14,17 +14,21 @@ def text_indentation(text):
         TypeError: if text is not a string
     """
     if not isinstance(text, str):
-        raise TypeError("text must be a string")
-    current_line = ""
-    for char in text:
-        current_line += char
-        if char in '.?:':
-            # Strip leading and trailing spaces from current line and print
-            print(current_line.strip())
-            # Print one empty line 
-            print()
-            # Reset current line
-            current_line = ""
-    # If there's remaining text, print it stripped
-    if current_line.strip():
-        print(current_line.strip())
+            raise TypeError("text must be a string")
+
+    c = 0
+    # Skip leading spaces
+    while c < len(text) and text[c] == ' ':
+        c += 1
+
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            # Skip spaces after punctuation
+            while c < len(text) and text[c] == ' ':
+                c += 1
+            continue
+        c += 1
