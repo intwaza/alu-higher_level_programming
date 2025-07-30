@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that deletes all State objects with a name containing the letter 'a'
+Script that deletes all State objects'
 """
 
 import sys
@@ -14,12 +14,12 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    
-    # Query and delete method
-    states_to_delete = (session.query(State)
-                   .filter(State.name.contains('a'))
-                   .all())
-    for state in states_to_delete:
-        session.delete(state)
+
+    # Get all states first, then delete those containing 'a'
+    all_states = session.query(State).all()
+    for state in all_states:
+        if 'a' in state.name:
+            session.delete(state)
+
     session.commit()
     session.close()
