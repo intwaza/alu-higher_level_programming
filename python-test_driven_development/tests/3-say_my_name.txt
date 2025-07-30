@@ -1,0 +1,82 @@
+The ``say_my_name`` module
+=========================
+
+Using ``say_my_name``
+--------------------
+
+Importing the function from the module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+Basic usage with both names:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+Another example with both names:
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+Using only first name (default last_name):
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Empty strings:
+    >>> say_my_name("", "")
+    My name is  
+
+Empty first name with last name:
+    >>> say_my_name("", "Smith")
+    My name is  Smith
+
+First name with empty last name explicitly:
+    >>> say_my_name("Alice", "")
+    My name is Alice 
+
+Long names:
+    >>> say_my_name("Jean-Baptiste", "Emmanuel")
+    My name is Jean-Baptiste Emmanuel
+
+Names with spaces:
+    >>> say_my_name("Mary Jane", "Watson")
+    My name is Mary Jane Watson
+
+Error case - first_name not a string (integer):
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Error case - first_name not a string (None):
+    >>> say_my_name(None, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Error case - last_name not a string (integer):
+    >>> say_my_name("John", 123)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Error case - last_name not a string (list):
+    >>> say_my_name("John", ["Smith"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Error case - both parameters not strings:
+    >>> say_my_name(123, 456)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Error case - first_name is a list:
+    >>> say_my_name(["John"], "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Error case - last_name is None:
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Error case - first_name is a float:
+    >>> say_my_name(3.14, "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
