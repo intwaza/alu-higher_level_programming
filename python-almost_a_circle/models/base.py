@@ -20,11 +20,6 @@ class Base:
     def __init__(self, id=None):
         """
         Class constructor for Base
-
-        Args:
-            id (int, optional): If provided, assigns this value to the instance id.
-                               If None, auto-increments __nb_objects and assigns 
-                               the new value to id.
         """
         if id is not None:
             self.id = id
