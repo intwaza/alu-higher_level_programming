@@ -18,7 +18,6 @@ if __name__ == "__main__":
     # Create engine to connect to MySQL server
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         username, password, database), pool_pre_ping=True)
-
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
 
@@ -28,9 +27,9 @@ if __name__ == "__main__":
     # Query cities with their corresponding state names using JOIN
     # Join City and State tables to get both city and state information
     results = session.query(City, State) \
-            .join(State, City.state_id == State.id) \
+        .join(State, City.state_id == State.id) \
             .order_by(City.id) \
-            .all()
+                .all()
 
     # Display results in the required format
     for city, state in results:
