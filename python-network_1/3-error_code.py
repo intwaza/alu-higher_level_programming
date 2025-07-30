@@ -3,16 +3,12 @@
 Script that takes in a URL, sends a request to the URL and displays the body of the response.
 Manages urllib.error.HTTPError exceptions.
 """
-import urllib.request
-import urllib.error
-import sys
-
 if __name__ == "__main__":
-    url = sys.argv[1]
-    
+    import sys
+    from urllib import request, error
+
     try:
-        with urllib.request.urlopen(url) as response:
-            body = response.read().decode('utf-8')
-            print(body)
-    except urllib.error.HTTPError as e:
-        print("Error code:", e.code)
+        with request.urlopen(sys.argv[1]) as res:
+            print(res.read().decode('UTF-8'))
+    except error.HTTPError as er:
+        print('Error code:', er.code)
