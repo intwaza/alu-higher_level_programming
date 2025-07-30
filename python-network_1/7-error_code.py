@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Script that takes in a URL, sends a request to the URL and displays the body of the response.
-If the HTTP status code is >= 400, prints the error code.
+Script that takes in a URL, sends a request to the URL
 """
 import sys
 import requests

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Script that takes GitHub credentials (username and password) and uses 
-the GitHub API to display your id using Basic Authentication.
+Script that takes GitHub credentials (username and password)
 """
 import sys
 import requests
