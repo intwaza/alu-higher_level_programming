@@ -3,41 +3,28 @@
 Script that takes in an argument and displays all values in the states table
 """
 
-import MySQLdb
 import sys
+import MySQLdb
+
 
 if __name__ == "__main__":
-    # Get command line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
-
-    # Connect to MySQL server on localhost at port 3306
-    db = MySQLdb.connect(
+    conn = MySQLdb.connect(
+        user=sys.argv[1],
+        password=sys.argv[2],
+        db=sys.argv[3],
         host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
+        port=3306
     )
+    cursor = conn.cursor()
+    sql = """ SELECT * FROM states
+        WHERE name LIKE BINARY '{}'
+        ORDER BY id ASC """.format(sys.argv[4])
 
-    # Create cursor object
-    cursor = db.cursor()
+    cursor.execute(sql)
+    data = cursor.fetchall()
 
-    # Create SQL query using format with user input
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
-
-    # Execute SQL query
-    cursor.execute(query)
-
-    # Fetch all results
-    results = cursor.fetchall()
-
-    # Display results
-    for row in results:
+    for row in data:
         print(row)
 
-    # Close cursor and database connection
     cursor.close()
-    db.close()
+    conn.close()

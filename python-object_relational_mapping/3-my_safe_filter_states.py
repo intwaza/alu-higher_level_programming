@@ -24,10 +24,11 @@ if __name__ == "__main__":
 
     # Create cursor object
     cursor = db.cursor()
-    
+
     # Use parameterized query to prevent SQL injection
     # %s is a placeholder that will be safely replaced by MySQLdb
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
+    cursor.execute("SELECT * FROM states WHERE name = %s "
+                   "ORDER BY id ASC", (state_name,))
 
     # Fetch all results
     results = cursor.fetchall()

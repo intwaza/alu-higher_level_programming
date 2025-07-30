@@ -26,7 +26,8 @@ if __name__ == "__main__":
 
     # Query State objects that contain the letter 'a' in their name
     # Filter states where name contains 'a', ordered by id
-    states = session.query(State).filter(State.name.contains('a')).order_by(State.id).all()
+    states = session.query(State).filter(State.name.contains('a')) \
+        .order_by(State.id).all()
 
     # Display results
     for state in states:

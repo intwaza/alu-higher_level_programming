@@ -27,10 +27,10 @@ if __name__ == "__main__":
     # Execute SQL query with JOIN to get cities with their state names
     # Using only one execute() call as required
     cursor.execute("""
-        SELECT cities.id, cities.name, states.name 
-        FROM cities 
-        JOIN states ON cities.state_id = states.id 
-        ORDER BY cities.id ASC
+                   SELECT cities.id, cities.name, states.name 
+                   FROM cities 
+                   JOIN states ON cities.state_id = states.id 
+                   ORDER BY cities.id ASC
     """)
 
     # Fetch all results
